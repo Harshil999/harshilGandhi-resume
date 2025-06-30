@@ -16,48 +16,64 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
-    }
-    body {
       background: #000;
       color: #fff;
     }
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') center/cover no-repeat;
+    h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00bcd4;
+      display: inline-block;
+    }
+    .skill-bars {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      animation: kenburns 20s infinite alternate;
-      position: relative;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 2rem auto;
     }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
+    .skill-bar {
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
     }
-    header h1, header p {
-      position: relative;
-      z-index: 1;
+    .skill-bar label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
-    header h1 {
-      font-size: 3rem;
-      color: #fff;
-      animation: fadeInDown 1.5s ease;
-    }
-    header p {
-      color: #ddd;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-      white-space: nowrap;
+    .bar {
+      background: #333;
+      border: 2px solid orange;
+      height: 25px;
+      border-radius: 10px;
       overflow: hidden;
-      border-right: 2px solid #00bcd4;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      background: #00bcd4;
+      text-align: right;
+      padding-right: 10px;
+      color: #fff;
+      font-weight: bold;
+      line-height: 25px;
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: bounce 2s infinite;
+    }
+    .scroll-down a {
+      color: #00bcd4;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 10px); }
     }
     nav {
       background: rgba(0, 0, 0, 0.85);
@@ -82,38 +98,6 @@
       padding: 4rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      font-size: 2rem;
-      color: #00bcd4;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-    }
-    .skills-bar {
-      margin-bottom: 1.5rem;
-    }
-    .skills-bar span {
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-    .bar {
-      background: #333;
-      height: 10px;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 10px;
-      background: #00bcd4;
-      animation: fillBar 2s forwards;
     }
     .project {
       margin-bottom: 1.5rem;
@@ -138,37 +122,16 @@
     a:hover {
       color: #80e1f1;
     }
-
-    @keyframes kenburns {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.1) translate(-10px, -10px);
-      }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #00bcd4; }
-    }
-    @keyframes fillBar {
-      to { width: 100%; }
-    }
   </style>
 </head>
 <body>
 
-  <header>
+  <header style="height: 100vh; background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative;">
     <h1>Harshil Vijaykumar Gandhi</h1>
     <p>Flutter Developer | .NET Core | SQL | 10+ Yrs Experience</p>
+    <div class="scroll-down">
+      <a href="#skills">&#8595;</a>
+    </div>
   </header>
 
   <nav>
@@ -180,22 +143,24 @@
   </nav>
 
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-bar">
-      <span>Flutter / Dart (8.5/10)</span>
-      <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
-    </div>
-    <div class="skills-bar">
-      <span>.NET Core / C# (8/10)</span>
-      <div class="bar"><div class="bar-fill" style="width: 80%"></div></div>
-    </div>
-    <div class="skills-bar">
-      <span>MS SQL Server (8.5/10)</span>
-      <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
-    </div>
-    <div class="skills-bar">
-      <span>GetX, Clean Architecture, API Integration (8.5/10)</span>
-      <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
+    <h2>Professional Skills</h2>
+    <div class="skill-bars">
+      <div class="skill-bar">
+        <label>Flutter</label>
+        <div class="bar"><div class="bar-fill" style="width: 85%;">8.5/10</div></div>
+      </div>
+      <div class="skill-bar">
+        <label>.NET Core</label>
+        <div class="bar"><div class="bar-fill" style="width: 80%;">8/10</div></div>
+      </div>
+      <div class="skill-bar">
+        <label>GetX</label>
+        <div class="bar"><div class="bar-fill" style="width: 85%;">8.5/10</div></div>
+      </div>
+      <div class="skill-bar">
+        <label>MS SQL</label>
+        <div class="bar"><div class="bar-fill" style="width: 85%;">8.5/10</div></div>
+      </div>
     </div>
   </section>
 
@@ -217,10 +182,10 @@
 
   <section id="experience">
     <h2>Experience</h2>
-    <div class="timeline-item"><strong>Venus Hospital</strong> – Lead Developer (Aug 2018 – Present)</div>
-    <div class="timeline-item"><strong>Toshal Infotech</strong> – Software Developer (Aug 2016 – Aug 2018)</div>
-    <div class="timeline-item"><strong>Adroit Technologies</strong> – Developer (Jun 2015 – Aug 2016)</div>
-    <div class="timeline-item"><strong>Cognizant</strong> – Programmer Analyst Trainee (Sep 2014 – May 2015)</div>
+    <p><strong>Shri Rasilaben Sevantilal Shah Venus Hospital</strong> – Full Stack Developer (Aug 2018 – Present)</p>
+    <p><strong>Toshal Infotech</strong> – Software Developer (Aug 2016 – Aug 2018)</p>
+    <p><strong>Adroit Technologies</strong> – Developer (Jun 2015 – Aug 2016)</p>
+    <p><strong>Cognizant</strong> – Programmer Analyst Trainee (Sep 2014 – May 2015)</p>
   </section>
 
   <section id="education">
@@ -234,27 +199,12 @@
     <p>Email: <a href="mailto:harshilgandhi90@gmail.com">harshilgandhi90@gmail.com</a></p>
     <p>Phone: +91 9429728770</p>
     <p>LinkedIn: <a href="https://linkedin.com/in/harshilgandhi90" target="_blank">linkedin.com/in/harshilgandhi90</a></p>
-    <p>Preferred: Remote / Pune / Mumbai / Bangalore</p>
+    <p>Preferred Location: Remote / Pune / Mumbai / Bangalore</p>
   </section>
 
   <footer>
     &copy; 2025 Harshil Gandhi. Built with ❤️ and HTML.
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll(\"section\");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(\"visible\");
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 
 </body>
 </html>
