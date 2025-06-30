@@ -26,15 +26,69 @@
       border-bottom: 2px solid #00bcd4;
       display: inline-block;
     }
+
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1581091012184-5c8d8578eb2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+    header .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+    header p {
+      color: #ddd;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: bounce 2s infinite;
+    }
+    .scroll-down a {
+      color: #00bcd4;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 10px); }
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     .skill-bars {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      max-width: 600px;
-      margin: 2rem auto;
-    }
-    .skill-bar {
-      width: 100%;
     }
     .skill-bar label {
       display: block;
@@ -58,90 +112,46 @@
       font-weight: bold;
       line-height: 25px;
     }
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      animation: bounce 2s infinite;
-    }
-    .scroll-down a {
-      color: #00bcd4;
-      font-size: 2rem;
-      text-decoration: none;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 10px); }
-    }
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      z-index: 1000;
-    }
-    nav a {
-      color: #00bcd4;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+
     .project {
       margin-bottom: 1.5rem;
       padding: 1rem;
       background: #111;
       border-left: 4px solid #00bcd4;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px #00bcd4;
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid orange;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       color: #aaa;
     }
+
     a {
       color: #00bcd4;
     }
     a:hover {
-      color: #80e1f1;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <header style="height: 100vh; background: url('https://images.unsplash.com/photo-1581091012184-5c8d8578eb2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80
-') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative;">
-    <h1>Harshil Vijaykumar Gandhi</h1>
-    <p>Flutter Developer | .NET Core | SQL | 10+ Yrs Experience</p>
+  <header>
+    <div class="content">
+      <h1>Harshil Vijaykumar Gandhi</h1>
+      <p>Flutter Developer | .NET Core | SQL | 10+ Yrs Experience</p>
+    </div>
     <div class="scroll-down">
       <a href="#skills">&#8595;</a>
     </div>
   </header>
-
-  <nav>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
   <section id="skills">
     <h2>Professional Skills</h2>
@@ -169,24 +179,24 @@
     <h2>Projects</h2>
     <div class="project">
       <h3>Venus Workspace</h3>
-      <p>Flutter, .NET Core 9, MS SQL — OTP login, dashboard, reusable widgets, lazy loading, GetX.</p>
+      <p>Flutter, .NET Core 9, MS SQL — OTP login, dashboard, Admitted Patients with filter & Sort, Investigation Requisition with Lab, Radio & Other Investigations, reusable widgets, lazy loading, GetX, custom routing and clean architecture.</p>
     </div>
     <div class="project">
       <h3>Venus Doc Connect</h3>
-      <p>Doctor-centric mobile app with reports, appointments, surgeries, profile details. Built in Flutter + API.</p>
+      <p>Doctor-centric mobile app built with Flutter + GetX for live patient lists, reports, appointment management and hospital contacts.</p>
     </div>
     <div class="project">
       <h3>HIMS Web System</h3>
-      <p>Hospital ERP: Admission, Billing, Pharmacy, Payroll using ASP.NET MVC + SQL backend.</p>
+      <p>Full hospital ERP system with modules like admission, billing, pharmacy, payroll, lab/radio using ASP.NET MVC and MS SQL.</p>
     </div>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <p><strong>Shri Rasilaben Sevantilal Shah Venus Hospital</strong> – Full Stack Developer (Aug 2018 – Present)</p>
-    <p><strong>Toshal Infotech</strong> – Software Developer (Aug 2016 – Aug 2018)</p>
-    <p><strong>Adroit Technologies</strong> – Developer (Jun 2015 – Aug 2016)</p>
-    <p><strong>Cognizant</strong> – Programmer Analyst Trainee (Sep 2014 – May 2015)</p>
+    <div class="timeline-item"><strong>Shri Rasilaben Sevantilal Shah Venus Hospital</strong> – Lead Developer (Aug 2018 – Present)</div>
+    <div class="timeline-item"><strong>Toshal Infotech</strong> – Software Developer (Aug 2016 – Aug 2018)</div>
+    <div class="timeline-item"><strong>Adroit Technologies</strong> – Developer (Jun 2015 – Aug 2016)</div>
+    <div class="timeline-item"><strong>Cognizant</strong> – Programmer Analyst Trainee (Sep 2014 – May 2015)</div>
   </section>
 
   <section id="education">
