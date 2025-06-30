@@ -12,6 +12,7 @@
       background: #f0f4f8;
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     .container {
       width: 90%;
@@ -21,10 +22,12 @@
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      animation: fadeIn 1s ease-in;
     }
     h1, h2, h3 {
       color: #007acc;
       margin-bottom: 1rem;
+      transition: all 0.3s ease;
     }
     h1 {
       font-size: 2.5rem;
@@ -36,6 +39,7 @@
     .hero {
       text-align: center;
       margin-bottom: 2rem;
+      animation: slideInTop 1s ease-out;
     }
     .hero p {
       font-size: 1.1rem;
@@ -43,6 +47,7 @@
     }
     .section {
       margin: 2rem 0;
+      animation: fadeInUp 0.8s ease-in;
     }
     ul {
       padding-left: 1.5rem;
@@ -74,6 +79,11 @@
       border-left: 4px solid #007acc;
       margin-bottom: 1rem;
       border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     .timeline {
       border-left: 2px solid #007acc;
@@ -88,6 +98,20 @@
       font-size: 0.9rem;
       color: #888;
       margin-top: 3rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideInTop {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
