@@ -3,131 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshil Gandhi - Flutter Developer Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Harshil Gandhi - Flutter Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
       color: #333;
+      line-height: 1.6;
     }
     .container {
-      max-width: 1000px;
+      width: 90%;
+      max-width: 1100px;
       margin: 2rem auto;
-      background: #fff;
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
     h1, h2, h3 {
-      color: #005792;
-      margin-bottom: 0.5rem;
-    }
-    a { color: #007bff; text-decoration: none; }
-    hr { border: none; border-top: 1px solid #ddd; margin: 1.5rem 0; }
-    .section { margin-bottom: 1.5rem; }
-    .contact p, .languages-location p { margin: 0.3rem 0; }
-    ul { padding-left: 1.2rem; }
-    .project-card {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 1rem;
+      color: #007acc;
       margin-bottom: 1rem;
-      background-color: #fafafa;
     }
-    .project-card strong {
+    h1 {
+      font-size: 2.5rem;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .hero p {
       font-size: 1.1rem;
+      color: #555;
+    }
+    .section {
+      margin: 2rem 0;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .skills-bar {
+      margin-bottom: 1rem;
+    }
+    .skills-bar span {
+      font-weight: 500;
+    }
+    .bar {
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      display: block;
+      height: 10px;
+      background: #007acc;
+      width: 0%;
+      animation: fillBar 2s forwards;
+    }
+    @keyframes fillBar {
+      to { width: 100%; }
+    }
+    .project {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-left: 4px solid #007acc;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    .timeline {
+      border-left: 2px solid #007acc;
+      padding-left: 1.5rem;
+      margin-left: 1rem;
+    }
+    .timeline-item {
+      margin-bottom: 1.5rem;
     }
     .footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #777;
-      margin-top: 2rem;
+      color: #888;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Harshil Vijaykumar Gandhi</h1>
-    <div class="contact">
-      <p>📧 harshilgandhi90@gmail.com | 📞 +91 9429728770</p>
-      <p>🔗 <a href="https://www.linkedin.com/in/harshilgandhi90" target="_blank">LinkedIn Profile</a></p>
+    <div class="hero">
+      <h1>Harshil Vijaykumar Gandhi</h1>
+      <p>Flutter Developer | Full Stack Developer (.NET Core, SQL)</p>
+      <p>
+        📧 <a href="mailto:harshilgandhi90@gmail.com">harshilgandhi90@gmail.com</a> |
+        📞 +91 9429728770 |
+        <a href="https://linkedin.com/in/harshilgandhi90" target="_blank">LinkedIn</a>
+      </p>
     </div>
-
-    <hr />
 
     <div class="section">
       <h2>Career Objective</h2>
-      <p>Flutter-focused Full Stack Developer with 10+ years of experience in mobile & web development. Currently leading the mobile app initiatives at a healthcare firm. Seeking freelance/remote roles to leverage skills in Flutter, .NET Core, API development, and clean architecture.</p>
+      <p>Flutter-focused Full Stack Developer with over 10 years of experience building scalable healthcare and enterprise apps. Passionate about reusable architecture, clean UI, and backend logic. Actively seeking freelance or remote opportunities in product-based companies.</p>
     </div>
 
     <div class="section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Dart, SQL, C#, C++, JavaScript</li>
-        <li><strong>Frameworks:</strong> Flutter, .NET Core, ASP.NET MVC</li>
-        <li><strong>Tools:</strong> VS Code, Visual Studio, Git, Postman, Android Studio</li>
-        <li><strong>Database:</strong> MS SQL Server</li>
-        <li><strong>Other:</strong> GetX, Clean Architecture, REST API Integration, Reusable Components</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Work Experience</h2>
-      <ul>
-        <li><strong>Shri Rasilaben Sevantilal Shah Venus Hospital</strong> (Aug 2018 – Present) – Lead Developer (Flutter & Web)</li>
-        <li><strong>Toshal Infotech</strong> (Aug 2016 – Aug 2018) – Software Developer</li>
-        <li><strong>Adroit Technologies</strong> (Jun 2015 – Aug 2016) – Software Developer</li>
-        <li><strong>Cognizant Technology Solutions</strong> (Sep 2014 – May 2015) – Programmer Analyst Trainee</li>
-      </ul>
+      <h2>Skills</h2>
+      <div class="skills-bar">
+        <span>Flutter / Dart</span>
+        <div class="bar"><span class="bar-fill" style="width: 95%"></span></div>
+      </div>
+      <div class="skills-bar">
+        <span>.NET Core / C#</span>
+        <div class="bar"><span class="bar-fill" style="width: 90%"></span></div>
+      </div>
+      <div class="skills-bar">
+        <span>MS SQL Server</span>
+        <div class="bar"><span class="bar-fill" style="width: 85%"></span></div>
+      </div>
+      <div class="skills-bar">
+        <span>API Integration / Clean Architecture / GetX</span>
+        <div class="bar"><span class="bar-fill" style="width: 95%"></span></div>
+      </div>
     </div>
 
     <div class="section">
       <h2>Projects</h2>
-
-      <div class="project-card">
-        <strong>Venus Workspace</strong><br />
-        <p>💻 <strong>Tech Stack:</strong> Flutter, .NET Core 9, MS SQL</p>
-        <p>🔹 Developed OTP/password login, module-wise dashboards (HIMS, Payroll, IPD, etc.), reusable widgets using GetX, clean architecture, custom navigation, and error tracking.</p>
-        <p>🔹 Mobile-focused with fully responsive and event-driven component designs.</p>
+      <div class="project">
+        <h3>Venus Workspace</h3>
+        <p>Flutter, .NET Core 9, MS SQL | OTP login, dashboards, custom widgets, GetX, lazy loading</p>
       </div>
-
-      <div class="project-card">
-        <strong>Venus Doc Connect</strong><br />
-        <p>💻 <strong>Tech Stack:</strong> Flutter, .NET Core, MS SQL</p>
-        <p>🔹 Built a doctor-centric app to view live patients, appointments, planned surgeries, payment insights, and lab/radio reports.</p>
-        <p>🔹 Integrated real-time data updates and emergency hospital contact info.</p>
+      <div class="project">
+        <h3>Venus Doc Connect</h3>
+        <p>Doctor app to view live data like appointments, reports, and surgeries | Flutter + API</p>
       </div>
+      <div class="project">
+        <h3>HIMS Web System</h3>
+        <p>Hospital ERP – Admission, Billing, Pharmacy, Payroll | ASP.NET MVC + MS SQL</p>
+      </div>
+    </div>
 
-      <div class="project-card">
-        <strong>HIMS Web System</strong><br />
-        <p>💻 <strong>Tech Stack:</strong> ASP.NET C#, MS SQL</p>
-        <p>🔹 ERP system for hospital operations: Admission, Billing, Discharge, Pharmacy, Payroll, and Lab/Radio reports.</p>
-        <p>🔹 SMS & WhatsApp integration for sending reports and alerts to patients.</p>
+    <div class="section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Shri Rasilaben S. Shah Venus Hospital</strong> – Lead Developer<br />
+          <small>Aug 2018 – Present</small>
+        </div>
+        <div class="timeline-item">
+          <strong>Toshal Infotech</strong> – Software Developer<br />
+          <small>Aug 2016 – Aug 2018</small>
+        </div>
+        <div class="timeline-item">
+          <strong>Adroit Technologies</strong> – Developer<br />
+          <small>Jun 2015 – Aug 2016</small>
+        </div>
+        <div class="timeline-item">
+          <strong>Cognizant</strong> – Programmer Analyst Trainee<br />
+          <small>Sep 2014 – May 2015</small>
+        </div>
       </div>
     </div>
 
     <div class="section">
       <h2>Education</h2>
-      <p><strong>MCA</strong> – Maharashtra Institute of Technology (2014), 72.86%</p>
+      <p><strong>MCA</strong> – Maharashtra Institute of Technology (2014) – 72.86%</p>
     </div>
 
     <div class="section">
       <h2>Certifications</h2>
-      <p>🎓 <a href="https://www.udemy.com/certificate/UC-f6255508-15f9-460e-9b53-d96e7f2d3191/" target="_blank">Flutter & Dart – The Complete Guide (Udemy)</a></p>
+      <p><a href="https://www.udemy.com/certificate/UC-f6255508-15f9-460e-9b53-d96e7f2d3191/" target="_blank">Flutter & Dart – The Complete Guide (Udemy)</a></p>
     </div>
 
-    <div class="section languages-location">
-      <h2>Languages & Job Preference</h2>
-      <p>🗣️ English, Hindi, Gujarati</p>
-      <p>📍 Remote, Pune, Mumbai, Bangalore</p>
+    <div class="section">
+      <h2>Languages & Preferences</h2>
+      <p>Languages: English, Hindi, Gujarati</p>
+      <p>Preferred: Remote / Pune / Mumbai / Bangalore</p>
     </div>
 
     <div class="footer">
-      <p>&copy; 2025 Harshil Gandhi. All rights reserved.</p>
+      &copy; 2025 Harshil Gandhi. All rights reserved.
     </div>
   </div>
 </body>
