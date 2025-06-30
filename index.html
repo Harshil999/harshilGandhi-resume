@@ -29,16 +29,35 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      animation: zoomIn 3s ease;
+      animation: kenburns 20s infinite alternate;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       font-size: 3rem;
       color: #fff;
+      animation: fadeInDown 1.5s ease;
     }
     header p {
       color: #ddd;
       font-size: 1.2rem;
       margin-top: 0.5rem;
+      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00bcd4;
     }
     nav {
       background: rgba(0, 0, 0, 0.85);
@@ -63,6 +82,13 @@
       padding: 4rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
       font-size: 2rem;
@@ -100,6 +126,11 @@
       padding: 1rem;
       background: #111;
       border-left: 4px solid #00bcd4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #00bcd4;
     }
     footer {
       text-align: center;
@@ -107,9 +138,26 @@
       font-size: 0.9rem;
       color: #aaa;
     }
-    @keyframes zoomIn {
-      from { transform: scale(1.2); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+
+    @keyframes kenburns {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.1) translate(-10px, -10px);
+      }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00bcd4; }
     }
     @keyframes fillBar {
       to { width: 100%; }
@@ -199,5 +247,20 @@
   <footer>
     &copy; 2025 Harshil Gandhi. Built with ❤️ and HTML.
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
