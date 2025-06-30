@@ -133,10 +133,10 @@
       color: #aaa;
     }
     a {
-      color: #00bcd4;
+      color: #fff;
     }
     a:hover {
-      color: #80e1f1;
+      color: #00bcd4;
     }
 
     @keyframes kenburns {
@@ -165,7 +165,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Harshil Vijaykumar Gandhi</h1>
     <p>Flutter Developer | .NET Core | SQL | 10+ Yrs Experience</p>
@@ -242,11 +241,11 @@
   </footer>
 
   <script>
-    const sections = document.querySelectorAll(\"section\");
+    const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add(\"visible\");
+          entry.target.classList.add("visible");
         }
       });
     }, { threshold: 0.1 });
@@ -255,6 +254,5 @@
       observer.observe(section);
     });
   </script>
-
 </body>
 </html>
